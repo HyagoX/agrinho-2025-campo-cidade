@@ -270,10 +270,9 @@ php -S localhost:8000
 ## 🏆 Diferenciais Competitivos
 
 ### Técnicos
-1. **CSS Puro**: Nenhum JavaScript utilizado, apenas HTML e CSS
-2. **Performance**: Otimizado para carregamento rápido
-3. **Manutenibilidade**: Código bem documentado e organizado
-4. **Escalabilidade**: Estrutura preparada para futuras expansões
+1. **Performance**: Otimizado para carregamento rápido
+2. **Manutenibilidade**: Código bem documentado e organizado
+3. **Escalabilidade**: Estrutura preparada para futuras expansões
 
 ### Visuais
 1. **Identidade Única**: Design original que representa o tema
@@ -300,11 +299,13 @@ Este projeto utilizou ferramentas de IA(DeepSeek, ChatGPT) para:
 
 > *"Assim como artistas usam pincéis ou músicos usam instrumentos, utilizei IA como ferramenta."*
 
-## 📞 Contato
-
-Este projeto foi desenvolvido para o **Concurso Agrinho 2025**, celebrando a importante conexão entre campo e cidade que sustenta nossa sociedade.
-
 **Tags**: #agrinho #campocidade #sustentabilidade #agricultura #responsivo #css #html
+
+### 🏫 Participação  
+- **Escola**: Colégio Estadual Cívico Militar João Paulo II  
+- **Professor Orientador**: Mariana Suele Neviandonski Zaninetti
+- **Estudante**: Hyago José Maria  
+- **Concurso**: Agrinho 2025 (Programação - Front-End)  
 
 ---
 
