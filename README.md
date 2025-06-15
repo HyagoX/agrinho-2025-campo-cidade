@@ -4,6 +4,9 @@
 
 Este projeto foi desenvolvido para o **Concurso Agrinho 2025**, celebrando a interdependência entre o campo e a cidade através de um site estático responsivo e visualmente atraente. O site explora como a agricultura urbana e rural se conectam, destacando a importância dessa relação para nossa sociedade.
 
+## 🔗 Acesso ao Projeto
+https://hyagox.github.io/agrinho-2025-campo-cidade/
+
 ### 🎯 Objetivo
 
 Criar uma experiência digital que demonstre como campo e cidade são complementares, explorando:
