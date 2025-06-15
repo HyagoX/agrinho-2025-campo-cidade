@@ -283,6 +283,19 @@ php -S localhost:8000
 3. **Educativo**: Informações que agregam conhecimento
 4. **Inspirador**: Motiva ações sustentáveis
 
+## 🤖 Desenvolvimento com Auxílio de IA
+
+Este projeto utilizou ferramentas de IA(DeepSeek, ChatGPT) para:
+- Resolução de dúvidas técnicas sobre HTML/CSS avançado  
+- Geração de exemplos de código (posteriormente adaptados por mim)  
+- Auxílio na estruturação da documentação  
+
+**Importante**:  
+- Todo o conteúdo temático e decisões criativas são de minha autoria.  
+- O código foi revisado, personalizado e implementado por mim.  
+
+> *"Assim como artistas usam pincéis ou músicos usam instrumentos, utilizei IA como ferramenta."*
+
 ## 📞 Contato
 
 Este projeto foi desenvolvido para o **Concurso Agrinho 2025**, celebrando a importante conexão entre campo e cidade que sustenta nossa sociedade.
