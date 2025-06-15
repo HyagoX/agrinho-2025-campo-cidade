@@ -263,10 +263,9 @@ php -S localhost:8000
 - **Design Urbano**: Elementos que remetem à vida nas cidades
 - **Conexão Natural**: Gradientes e transições que simbolizam união
 
-### ℹ️ Sobre as Informações  
-- **Dados estatísticos**: Valores ilustrativos criados para demonstração didática.  
-- **Depoimentos/contatos**: Simulações que representam vozes da comunidade.  
-- **Imagens**: Elementos visuais criados com CSS ou emojis (sem direitos autorais).  
+## ℹ️ Sobre as Informações  
+- **Dados estatísticos**: Valores ilustrativos criados para demonstração didática.   
+- **Imagens**: Elementos visuais criados com CSS e emojis (sem direitos autorais).  
 
 ## 🏆 Diferenciais Competitivos
 
