@@ -4,91 +4,120 @@
    Descrição: Estilos principais do site estático responsivo
    Autor: Projeto Agrinho
    Data: 2025
+   
+   ESTRUTURA DO ARQUIVO:
+   1. Variáveis CSS (Design System)
+   2. Reset e estilos base
+   3. Componentes de navegação
+   4. Seções principais
+   5. Formulários e interações
+   6. Animações e efeitos
+   7. Responsividade
+   8. Seletores avançados
    ========================================================================== */
 
-/* Variáveis CSS para consistência de design */
+/* ==========================================================================
+   1. VARIÁVEIS CSS - DESIGN SYSTEM
+   Define todas as cores, fontes, espaçamentos e outros valores reutilizáveis
+   ========================================================================== */
 :root {
-  /* Paleta de cores principais */
-  --cor-campo: #2d5016;
-  --cor-campo-claro: #4a7c21;
-  --cor-campo-suave: #7ba05b;
-  --cor-cidade: #1a365d;
-  --cor-cidade-claro: #2b77ad;
-  --cor-cidade-suave: #63b3ed;
+  /* PALETA DE CORES TEMÁTICA */
+  /* Cores do campo - tons de verde representando a natureza */
+  --cor-campo: #2d5016;           /* Verde escuro principal */
+  --cor-campo-claro: #4a7c21;     /* Verde médio */
+  --cor-campo-suave: #7ba05b;     /* Verde claro */
   
-  /* Cores neutras */
+  /* Cores da cidade - tons de azul representando o urbano */
+  --cor-cidade: #1a365d;          /* Azul escuro principal */
+  --cor-cidade-claro: #2b77ad;    /* Azul médio */
+  --cor-cidade-suave: #63b3ed;    /* Azul claro */
+  
+  /* Cores neutras para texto e backgrounds */
   --cor-branco: #ffffff;
   --cor-cinza-claro: #f7fafc;
   --cor-cinza-medio: #e2e8f0;
   --cor-cinza-escuro: #4a5568;
   --cor-preto: #1a202c;
   
-  /* Cores de destaque */
-  --cor-dourado: #d69e2e;
-  --cor-terra: #c53030;
-  --cor-verde-agua: #38b2ac;
+  /* Cores de destaque para elementos especiais */
+  --cor-dourado: #d69e2e;         /* Para tags e destaques */
+  --cor-terra: #c53030;           /* Para elementos terra */
+  --cor-verde-agua: #38b2ac;      /* Para sustentabilidade */
   
-  /* Tipografia */
+  /* TIPOGRAFIA */
   --fonte-principal: 'Inter', system-ui, -apple-system, sans-serif;
   --fonte-destaque: 'Playfair Display', Georgia, serif;
   
-  /* Espaçamentos */
-  --espacamento-xs: 0.25rem;
-  --espacamento-sm: 0.5rem;
-  --espacamento-md: 1rem;
-  --espacamento-lg: 1.5rem;
-  --espacamento-xl: 2rem;
-  --espacamento-2xl: 3rem;
-  --espacamento-3xl: 4rem;
+  /* ESPAÇAMENTOS RESPONSIVOS */
+  --espacamento-xs: 0.25rem;      /* 4px */
+  --espacamento-sm: 0.5rem;       /* 8px */
+  --espacamento-md: 1rem;         /* 16px */
+  --espacamento-lg: 1.5rem;       /* 24px */
+  --espacamento-xl: 2rem;         /* 32px */
+  --espacamento-2xl: 3rem;        /* 48px */
+  --espacamento-3xl: 4rem;        /* 64px */
   
-  /* Bordas */
-  --borda-radius: 0.375rem;
-  --borda-radius-lg: 0.75rem;
-  --borda-radius-xl: 1rem;
+  /* BORDAS E RAIOS */
+  --borda-radius: 0.375rem;       /* 6px - padrão */
+  --borda-radius-lg: 0.75rem;     /* 12px - médio */
+  --borda-radius-xl: 1rem;        /* 16px - grande */
   
-  /* Sombras */
+  /* SOMBRAS PARA PROFUNDIDADE */
   --sombra-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --sombra-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --sombra-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --sombra-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   
-  /* Transições */
+  /* TRANSIÇÕES SUAVES */
   --transicao-rapida: 0.15s ease-in-out;
   --transicao-media: 0.3s ease-in-out;
   --transicao-lenta: 0.5s ease-in-out;
 }
 
-/* Reset e estilos base */
+/* ==========================================================================
+   2. RESET E ESTILOS BASE
+   Normaliza comportamentos entre navegadores e define estilos fundamentais
+   ========================================================================== */
+
+/* Reset universal - remove margens/paddings padrão e aplica box-sizing */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
 }
 
+/* Configuração base do HTML */
 html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+  scroll-behavior: smooth;  /* Navegação suave entre seções */
+  font-size: 16px;         /* Base para cálculos rem */
 }
 
+/* Configuração base do body */
 body {
   font-family: var(--fonte-principal);
-  line-height: 1.6;
+  line-height: 1.6;        /* Espaçamento entre linhas para legibilidade */
   color: var(--cor-preto);
   background-color: var(--cor-branco);
-  overflow-x: hidden;
+  overflow-x: hidden;      /* Evita scroll horizontal */
 }
 
-/* Utilitários de tipografia */
+/* ==========================================================================
+   3. CLASSES UTILITÁRIAS DE TIPOGRAFIA
+   Estilos reutilizáveis para títulos e textos
+   ========================================================================== */
+
+/* Títulos de seção com decoração */
 .section-title {
   font-family: var(--fonte-destaque);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.75rem, 4vw, 2.5rem); /* Responsivo: min, preferido, max */
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--espacamento-md);
   color: var(--cor-campo);
-  position: relative;
+  position: relative; /* Para posicionamento do pseudo-elemento */
 }
 
+/* Linha decorativa abaixo dos títulos usando pseudo-elemento */
 .section-title::after {
   content: '';
   position: absolute;
@@ -100,6 +129,7 @@ body {
   border-radius: var(--borda-radius);
 }
 
+/* Subtítulos de seção */
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--cor-cinza-escuro);
@@ -107,7 +137,7 @@ body {
   text-align: center;
 }
 
-/* Container responsivo */
+/* Container responsivo centralizado */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -115,21 +145,24 @@ body {
 }
 
 /* ==========================================================================
-   HEADER E NAVEGAÇÃO
+   4. HEADER E NAVEGAÇÃO
+   Cabeçalho fixo com menu responsivo implementado apenas com CSS
    ========================================================================== */
 
+/* Header fixo no topo com efeito glassmorphism */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95); /* Fundo semi-transparente */
+  backdrop-filter: blur(10px);           /* Efeito de desfoque */
+  z-index: 1000;                        /* Sempre por cima */
   box-shadow: var(--sombra-sm);
   transition: all var(--transicao-media);
 }
 
+/* Container da navegação */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -140,6 +173,7 @@ body {
   height: 80px;
 }
 
+/* Logo principal */
 .nav-logo h1 {
   font-family: var(--fonte-destaque);
   font-size: 1.5rem;
@@ -147,12 +181,14 @@ body {
   margin: 0;
 }
 
+/* Separador no logo (×) */
 .logo-separator {
   color: var(--cor-cidade);
   margin: 0 0.25rem;
   font-weight: 300;
 }
 
+/* Slogan abaixo do logo */
 .nav-tagline {
   font-size: 0.75rem;
   color: var(--cor-cinza-escuro);
@@ -160,21 +196,23 @@ body {
   font-weight: 300;
 }
 
-/* Menu principal */
+/* Menu principal - layout horizontal no desktop */
 .nav-menu {
   display: flex;
   list-style: none;
   gap: var(--espacamento-lg);
 }
 
+/* Links de navegação com efeito hover */
 .nav-link {
   text-decoration: none;
   color: var(--cor-cinza-escuro);
   font-weight: 500;
   transition: color var(--transicao-media);
-  position: relative;
+  position: relative; /* Para linha decorativa */
 }
 
+/* Linha que aparece abaixo do link no hover */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -186,19 +224,22 @@ body {
   transition: width var(--transicao-media);
 }
 
+/* Efeitos hover nos links */
 .nav-link:hover {
   color: var(--cor-campo);
 }
 
 .nav-link:hover::after {
-  width: 100%;
+  width: 100%; /* Linha se expande */
 }
 
-/* Menu hamburguer (oculto por padrão) */
+/* MENU HAMBURGUER PARA MOBILE (CSS-only) */
+/* Input checkbox escondido que controla o menu */
 .menu-toggle {
   display: none;
 }
 
+/* Container do ícone hamburguer */
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -206,6 +247,7 @@ body {
   gap: 4px;
 }
 
+/* Linhas do hamburguer */
 .menu-icon span {
   width: 25px;
   height: 3px;
@@ -215,11 +257,13 @@ body {
 }
 
 /* ==========================================================================
-   SEÇÃO HERO
+   5. SEÇÃO HERO
+   Primeira seção com impacto visual e elementos gráficos animados
    ========================================================================== */
 
+/* Container principal do hero */
 .hero {
-  min-height: 100vh;
+  min-height: 100vh;           /* Altura total da viewport */
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, var(--cor-cinza-claro) 0%, var(--cor-branco) 100%);
@@ -227,6 +271,7 @@ body {
   overflow: hidden;
 }
 
+/* Elementos de fundo decorativos usando gradientes radiais */
 .hero::before {
   content: '';
   position: absolute;
@@ -237,38 +282,43 @@ body {
   background: 
     radial-gradient(circle at 20% 20%, rgba(45, 80, 22, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(26, 54, 93, 0.1) 0%, transparent 50%);
-  pointer-events: none;
+  pointer-events: none; /* Não interfere com interações */
 }
 
+/* Layout em grid do conteúdo hero */
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--espacamento-md);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
   gap: var(--espacamento-3xl);
   align-items: center;
   min-height: 100vh;
 }
 
+/* Conteúdo textual com animação */
 .hero-content {
-  animation: fadeInUp 1s ease-out;
+  animation: fadeInUp 1s ease-out; /* Animação de entrada */
 }
 
+/* Título principal responsivo */
 .hero-title {
   font-family: var(--fonte-destaque);
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Tamanho fluido */
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: var(--espacamento-lg);
   color: var(--cor-preto);
 }
 
+/* Texto destacado no título */
 .hero-highlight {
   color: var(--cor-campo);
   position: relative;
 }
 
+/* Sublinhado decorativo no texto destacado */
 .hero-highlight::after {
   content: '';
   position: absolute;
@@ -281,6 +331,7 @@ body {
   z-index: -1;
 }
 
+/* Subtítulo do hero */
 .hero-subtitle {
   font-size: 1.25rem;
   color: var(--cor-cinza-escuro);
@@ -288,6 +339,7 @@ body {
   line-height: 1.5;
 }
 
+/* Botão call-to-action principal com múltiplos efeitos */
 .cta-button {
   background: linear-gradient(135deg, var(--cor-campo), var(--cor-campo-claro));
   color: var(--cor-branco);
@@ -303,6 +355,7 @@ body {
   overflow: hidden;
 }
 
+/* Efeito de brilho que passa pelo botão */
 .cta-button::before {
   content: '';
   position: absolute;
@@ -314,48 +367,54 @@ body {
   transition: left var(--transicao-lenta);
 }
 
+/* Efeitos hover do botão */
 .cta-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* Levitação */
   box-shadow: var(--sombra-lg);
 }
 
 .cta-button:hover::before {
-  left: 100%;
+  left: 100%; /* Brilho passa pelo botão */
 }
 
 .cta-button:active {
-  transform: translateY(0);
+  transform: translateY(0); /* Volta à posição original */
 }
 
-/* Visual Hero - Elementos gráficos */
+/* ELEMENTOS VISUAIS GRÁFICOS DO HERO */
+/* Container dos elementos visuais */
 .hero-visual {
   position: relative;
   height: 400px;
   animation: fadeInRight 1s ease-out;
 }
 
+/* Círculos representando campo e cidade */
 .hero-circle {
   position: absolute;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  animation: pulse 3s ease-in-out infinite;
+  animation: pulse 3s ease-in-out infinite; /* Animação de pulsação */
 }
 
+/* Círculo do campo (verde) */
 .hero-circle.campo {
   top: 0;
   left: 0;
   background: linear-gradient(135deg, var(--cor-campo), var(--cor-campo-claro));
-  box-shadow: 0 0 40px rgba(45, 80, 22, 0.3);
+  box-shadow: 0 0 40px rgba(45, 80, 22, 0.3); /* Brilho verde */
 }
 
+/* Círculo da cidade (azul) */
 .hero-circle.cidade {
   bottom: 0;
   right: 0;
   background: linear-gradient(135deg, var(--cor-cidade), var(--cor-cidade-claro));
-  box-shadow: 0 0 40px rgba(26, 54, 93, 0.3);
+  box-shadow: 0 0 40px rgba(26, 54, 93, 0.3); /* Brilho azul */
 }
 
+/* Linha conectando os círculos */
 .connection-line {
   position: absolute;
   top: 50%;
@@ -364,13 +423,14 @@ body {
   width: 2px;
   height: 150px;
   background: linear-gradient(180deg, var(--cor-campo), var(--cor-cidade));
-  animation: grow 2s ease-out 0.5s forwards;
+  animation: grow 2s ease-out 0.5s forwards; /* Cresce com delay */
   transform-origin: center;
   opacity: 0;
 }
 
 /* ==========================================================================
-   SEÇÃO CONEXÃO
+   6. SEÇÃO CONEXÃO
+   Cards explicativos sobre a relação campo-cidade
    ========================================================================== */
 
 .conexao {
@@ -378,17 +438,20 @@ body {
   background: var(--cor-branco);
 }
 
+/* Cabeçalho centralizado da seção */
 .section-header {
   text-align: center;
   margin-bottom: var(--espacamento-3xl);
 }
 
+/* Grid responsivo para os cards */
 .conexao-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
   gap: var(--espacamento-xl);
 }
 
+/* Cards individuais com efeitos hover */
 .conexao-card {
   background: var(--cor-branco);
   padding: var(--espacamento-xl);
@@ -400,6 +463,7 @@ body {
   overflow: hidden;
 }
 
+/* Linha colorida que aparece no topo ao hover */
 .conexao-card::before {
   content: '';
   position: absolute;
@@ -408,19 +472,21 @@ body {
   right: 0;
   height: 4px;
   background: linear-gradient(90deg, var(--cor-campo), var(--cor-cidade));
-  transform: scaleX(0);
+  transform: scaleX(0);                    /* Inicialmente invisível */
   transition: transform var(--transicao-media);
 }
 
+/* Efeitos hover do card */
 .conexao-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px);           /* Levitação */
   box-shadow: var(--sombra-xl);
 }
 
 .conexao-card:hover::before {
-  transform: scaleX(1);
+  transform: scaleX(1);                  /* Linha aparece */
 }
 
+/* Ícones dos cards criados com CSS */
 .card-icon {
   width: 80px;
   height: 80px;
@@ -429,12 +495,13 @@ body {
   position: relative;
 }
 
+/* Ícone do campo */
 .campo-icon {
   background: linear-gradient(135deg, var(--cor-campo-suave), var(--cor-campo));
 }
 
 .campo-icon::after {
-  content: '🌾';
+  content: '🌾';                         /* Emoji como ícone */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -442,6 +509,7 @@ body {
   font-size: 2rem;
 }
 
+/* Ícone da cidade */
 .cidade-icon {
   background: linear-gradient(135deg, var(--cor-cidade-suave), var(--cor-cidade));
 }
@@ -455,6 +523,7 @@ body {
   font-size: 2rem;
 }
 
+/* Ícone da cultura */
 .cultura-icon {
   background: linear-gradient(135deg, var(--cor-dourado), var(--cor-terra));
 }
@@ -468,6 +537,7 @@ body {
   font-size: 2rem;
 }
 
+/* Títulos dos cards */
 .conexao-card h3 {
   font-family: var(--fonte-destaque);
   font-size: 1.5rem;
@@ -475,13 +545,15 @@ body {
   color: var(--cor-preto);
 }
 
+/* Texto dos cards */
 .conexao-card p {
   color: var(--cor-cinza-escuro);
   line-height: 1.6;
 }
 
 /* ==========================================================================
-   SEÇÃO AGRICULTURA
+   7. SEÇÃO AGRICULTURA
+   Conteúdo sobre agricultura com ilustração animada
    ========================================================================== */
 
 .agricultura {
@@ -489,6 +561,7 @@ body {
   background: linear-gradient(135deg, var(--cor-cinza-claro), var(--cor-branco));
 }
 
+/* Layout em duas colunas */
 .agricultura-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -496,14 +569,16 @@ body {
   align-items: center;
 }
 
+/* Ajuste do título para alinhamento à esquerda */
 .agricultura-text .section-title {
   text-align: left;
 }
 
 .agricultura-text .section-title::after {
-  left: 0;
+  left: 0; /* Linha decorativa alinhada à esquerda */
 }
 
+/* Parágrafo principal */
 .agricultura-text p {
   font-size: 1.125rem;
   color: var(--cor-cinza-escuro);
@@ -511,12 +586,14 @@ body {
   line-height: 1.6;
 }
 
+/* Grid das estatísticas */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--espacamento-lg);
 }
 
+/* Items de estatística individuais */
 .stat-item {
   text-align: center;
   padding: var(--espacamento-lg);
@@ -527,9 +604,10 @@ body {
 }
 
 .stat-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Pequeno zoom ao hover */
 }
 
+/* Números das estatísticas */
 .stat-number {
   font-family: var(--fonte-destaque);
   font-size: 2.5rem;
@@ -538,13 +616,15 @@ body {
   margin-bottom: var(--espacamento-sm);
 }
 
+/* Labels das estatísticas */
 .stat-label {
   font-size: 0.875rem;
   color: var(--cor-cinza-escuro);
   font-weight: 500;
 }
 
-/* Ilustração da agricultura */
+/* ILUSTRAÇÃO ANIMADA DA AGRICULTURA */
+/* Container da ilustração */
 .agricultura-visual {
   position: relative;
   height: 400px;
@@ -553,6 +633,7 @@ body {
   overflow: hidden;
 }
 
+/* Container das plantações */
 .agricultura-illustration {
   position: absolute;
   bottom: 0;
@@ -561,6 +642,7 @@ body {
   height: 60%;
 }
 
+/* Fileiras de plantação animadas */
 .field-row {
   height: 15%;
   margin: 2% 10%;
@@ -572,9 +654,10 @@ body {
     var(--cor-campo-suave) 40px
   );
   border-radius: var(--borda-radius);
-  animation: grow-crops 3s ease-in-out infinite;
+  animation: grow-crops 3s ease-in-out infinite; /* Crescimento das plantas */
 }
 
+/* Delays escalonados para as fileiras */
 .field-row:nth-child(2) {
   animation-delay: 0.5s;
 }
@@ -587,6 +670,7 @@ body {
   animation-delay: 1.5s;
 }
 
+/* Trator animado */
 .tractor {
   position: absolute;
   bottom: 10%;
@@ -594,9 +678,10 @@ body {
   height: 30px;
   background: var(--cor-terra);
   border-radius: var(--borda-radius);
-  animation: move-tractor 8s linear infinite;
+  animation: move-tractor 8s linear infinite; /* Movimento contínuo */
 }
 
+/* Emoji do trator */
 .tractor::before {
   content: '🚜';
   position: absolute;
@@ -607,7 +692,8 @@ body {
 }
 
 /* ==========================================================================
-   SEÇÃO SUSTENTABILIDADE
+   8. SEÇÃO SUSTENTABILIDADE
+   Cards de soluções sustentáveis
    ========================================================================== */
 
 .sustentabilidade {
@@ -615,12 +701,14 @@ body {
   background: var(--cor-branco);
 }
 
+/* Grid responsivo para cards */
 .sustentabilidade-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--espacamento-xl);
 }
 
+/* Cards de sustentabilidade */
 .sustentabilidade-card {
   background: var(--cor-branco);
   border-radius: var(--borda-radius-xl);
@@ -634,6 +722,7 @@ body {
   box-shadow: var(--sombra-xl);
 }
 
+/* Imagens dos cards criadas com CSS */
 .card-image {
   height: 200px;
   background-size: cover;
@@ -641,6 +730,7 @@ body {
   position: relative;
 }
 
+/* Overlay decorativo nas imagens */
 .card-image::after {
   content: '';
   position: absolute;
@@ -651,6 +741,7 @@ body {
   background: linear-gradient(45deg, rgba(45, 80, 22, 0.1), rgba(26, 54, 93, 0.1));
 }
 
+/* Feira orgânica */
 .feira-organica {
   background: linear-gradient(135deg, var(--cor-campo-suave), var(--cor-campo));
 }
@@ -665,6 +756,7 @@ body {
   z-index: 1;
 }
 
+/* Turismo rural */
 .turismo-rural {
   background: linear-gradient(135deg, var(--cor-dourado), var(--cor-terra));
 }
@@ -679,6 +771,7 @@ body {
   z-index: 1;
 }
 
+/* Hortas urbanas */
 .hortas-urbanas {
   background: linear-gradient(135deg, var(--cor-verde-agua), var(--cor-cidade));
 }
@@ -693,6 +786,7 @@ body {
   z-index: 1;
 }
 
+/* Conteúdo dos cards */
 .card-content {
   padding: var(--espacamento-xl);
 }
@@ -710,6 +804,7 @@ body {
   margin-bottom: var(--espacamento-lg);
 }
 
+/* Tags coloridas nos cards */
 .card-tag {
   display: inline-block;
   background: linear-gradient(90deg, var(--cor-campo), var(--cor-cidade));
@@ -721,7 +816,8 @@ body {
 }
 
 /* ==========================================================================
-   SEÇÃO CONTATO
+   9. SEÇÃO CONTATO
+   Informações de contato e formulário simulado, sem funcionalidade real
    ========================================================================== */
 
 .contato {
@@ -729,6 +825,7 @@ body {
   background: linear-gradient(135deg, var(--cor-cinza-claro), var(--cor-branco));
 }
 
+/* Layout em duas colunas */
 .contato-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -736,6 +833,7 @@ body {
   align-items: start;
 }
 
+/* Ajustes do título de contato */
 .contato-info .section-title {
   text-align: left;
 }
@@ -744,6 +842,7 @@ body {
   left: 0;
 }
 
+/* Parágrafo de introdução */
 .contato-info p {
   font-size: 1.125rem;
   color: var(--cor-cinza-escuro);
@@ -751,18 +850,21 @@ body {
   line-height: 1.6;
 }
 
+/* Lista de detalhes de contato */
 .contato-details {
   display: flex;
   flex-direction: column;
   gap: var(--espacamento-lg);
 }
 
+/* Items individuais de contato */
 .detail-item {
   display: flex;
   align-items: center;
   gap: var(--espacamento-md);
 }
 
+/* Ícones de contato */
 .detail-icon {
   width: 40px;
   height: 40px;
@@ -773,6 +875,7 @@ body {
   position: relative;
 }
 
+/* Ícone de email */
 .email-icon {
   background: linear-gradient(135deg, var(--cor-campo), var(--cor-campo-claro));
 }
@@ -782,6 +885,7 @@ body {
   font-size: 1.25rem;
 }
 
+/* Ícone de telefone */
 .phone-icon {
   background: linear-gradient(135deg, var(--cor-cidade), var(--cor-cidade-claro));
 }
@@ -791,6 +895,7 @@ body {
   font-size: 1.25rem;
 }
 
+/* Ícone de localização */
 .location-icon {
   background: linear-gradient(135deg, var(--cor-dourado), var(--cor-terra));
 }
@@ -800,12 +905,13 @@ body {
   font-size: 1.25rem;
 }
 
+/* Texto dos contatos */
 .detail-item span {
   color: var(--cor-cinza-escuro);
   font-weight: 500;
 }
 
-/* Formulário de contato */
+/* FORMULÁRIO DE CONTATO */
 .contato-form {
   background: var(--cor-branco);
   padding: var(--espacamento-xl);
@@ -813,10 +919,12 @@ body {
   box-shadow: var(--sombra-md);
 }
 
+/* Grupos de campos do formulário */
 .form-group {
   margin-bottom: var(--espacamento-lg);
 }
 
+/* Labels dos campos */
 .form-group label {
   display: block;
   margin-bottom: var(--espacamento-sm);
@@ -824,6 +932,7 @@ body {
   font-weight: 600;
 }
 
+/* Campos de entrada */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -836,19 +945,22 @@ body {
   transition: border-color var(--transicao-media);
 }
 
+/* Estados de foco dos campos */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--cor-campo);
-  box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+  box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1); /* Anel de foco */
 }
 
+/* Configuração específica do textarea */
 .form-group textarea {
-  resize: vertical;
+  resize: vertical;    /* Permite redimensionamento apenas vertical */
   min-height: 120px;
 }
 
+/* Botão de envio do formulário */
 .form-button {
   width: 100%;
   background: linear-gradient(135deg, var(--cor-campo), var(--cor-campo-claro));
@@ -862,6 +974,7 @@ body {
   transition: all var(--transicao-media);
 }
 
+/* Efeitos hover do botão */
 .form-button:hover {
   background: linear-gradient(135deg, var(--cor-campo-claro), var(--cor-campo));
   transform: translateY(-2px);
@@ -873,7 +986,8 @@ body {
 }
 
 /* ==========================================================================
-   FOOTER
+   10. FOOTER
+   Rodapé com informações e links
    ========================================================================== */
 
 .footer {
@@ -882,6 +996,7 @@ body {
   padding: var(--espacamento-3xl) 0 var(--espacamento-lg);
 }
 
+/* Grid do conteúdo do footer */
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -889,6 +1004,7 @@ body {
   margin-bottom: var(--espacamento-xl);
 }
 
+/* Títulos das seções do footer */
 .footer-section h3,
 .footer-section h4 {
   font-family: var(--fonte-destaque);
@@ -904,12 +1020,14 @@ body {
   font-size: 1.25rem;
 }
 
+/* Parágrafos do footer */
 .footer-section p {
   color: var(--cor-cinza-medio);
   line-height: 1.6;
   margin-bottom: var(--espacamento-sm);
 }
 
+/* Listas do footer */
 .footer-section ul {
   list-style: none;
 }
@@ -918,6 +1036,7 @@ body {
   margin-bottom: var(--espacamento-sm);
 }
 
+/* Links do footer */
 .footer-section a {
   color: var(--cor-cinza-medio);
   text-decoration: none;
@@ -928,6 +1047,7 @@ body {
   color: var(--cor-branco);
 }
 
+/* Linha final do footer */
 .footer-bottom {
   border-top: 1px solid var(--cor-cinza-escuro);
   padding-top: var(--espacamento-lg);
@@ -939,15 +1059,18 @@ body {
   margin-bottom: var(--espacamento-sm);
 }
 
+/* Tags destacadas no footer */
 .footer-tag {
   color: var(--cor-campo-suave);
   font-weight: 600;
 }
 
 /* ==========================================================================
-   ANIMAÇÕES
+   11. ANIMAÇÕES
+   Definição de keyframes para animações personalizadas
    ========================================================================== */
 
+/* Animação de entrada vinda de baixo */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -959,6 +1082,7 @@ body {
   }
 }
 
+/* Animação de entrada vinda da direita */
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -970,6 +1094,7 @@ body {
   }
 }
 
+/* Animação de pulsação */
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -981,6 +1106,7 @@ body {
   }
 }
 
+/* Animação de crescimento */
 @keyframes grow {
   from {
     height: 0;
@@ -992,6 +1118,7 @@ body {
   }
 }
 
+/* Animação de crescimento das plantas */
 @keyframes grow-crops {
   0%, 100% {
     transform: scaleY(1);
@@ -1001,6 +1128,7 @@ body {
   }
 }
 
+/* Animação do movimento do trator */
 @keyframes move-tractor {
   0% {
     left: -60px;
@@ -1010,7 +1138,7 @@ body {
   }
 }
 
-/* Animação de entrada para elementos que entram na viewport */
+/* Classe para animações que entram na viewport */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -1023,17 +1151,20 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVIDADE
+   12. RESPONSIVIDADE
+   Media queries para diferentes tamanhos de tela
    ========================================================================== */
 
-/* Tablet (768px - 1024px) */
+/* TABLET (768px - 1024px) */
 @media (max-width: 1024px) {
+  /* Hero muda para layout vertical */
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
     gap: var(--espacamento-xl);
   }
   
+  /* Reduz tamanho dos elementos visuais */
   .hero-visual {
     height: 300px;
   }
@@ -1043,6 +1174,7 @@ body {
     height: 150px;
   }
   
+  /* Seções mudam para layout de coluna única */
   .agricultura-content {
     grid-template-columns: 1fr;
     gap: var(--espacamento-xl);
@@ -1053,24 +1185,27 @@ body {
     gap: var(--espacamento-xl);
   }
   
+  /* Estatísticas em coluna única */
   .stats-grid {
     grid-template-columns: 1fr;
     gap: var(--espacamento-md);
   }
 }
 
-/* Mobile (até 768px) */
+/* MOBILE (até 768px) */
 @media (max-width: 768px) {
+  /* Reduz espaçamentos para mobile */
   :root {
     --espacamento-3xl: 2rem;
     --espacamento-2xl: 1.5rem;
   }
   
-  /* Navegação mobile */
+  /* NAVEGAÇÃO MOBILE */
+  /* Menu se torna off-canvas lateral */
   .nav-menu {
     position: fixed;
     top: 80px;
-    left: -100%;
+    left: -100%;                          /* Escondido à esquerda */
     width: 100%;
     height: calc(100vh - 80px);
     background: var(--cor-branco);
@@ -1081,32 +1216,38 @@ body {
     box-shadow: var(--sombra-lg);
   }
   
+  /* Menu aparece quando checkbox está checked */
   .menu-toggle:checked ~ .nav-menu {
     left: 0;
   }
   
+  /* Mostra ícone hamburguer */
   .menu-icon {
     display: flex;
   }
   
-  /* Animação do menu hamburguer */
+  /* ANIMAÇÕES DO MENU HAMBURGUER */
+  /* Linha superior vira diagonal */
   .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
   
+  /* Linha do meio desaparece */
   .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
     opacity: 0;
   }
   
+  /* Linha inferior vira diagonal oposta */
   .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
   
-  /* Ajustes de conteúdo mobile */
+  /* AJUSTES DE CONTEÚDO MOBILE */
   .container {
     padding: 0 var(--espacamento-md);
   }
   
+  /* Hero menor para mobile */
   .hero {
     min-height: 80vh;
     padding: var(--espacamento-xl) 0;
@@ -1117,6 +1258,7 @@ body {
     padding: var(--espacamento-xl) 0;
   }
   
+  /* Elementos visuais menores */
   .hero-visual {
     height: 200px;
   }
@@ -1130,6 +1272,7 @@ body {
     height: 80px;
   }
   
+  /* Grids viram colunas únicas */
   .conexao-grid {
     grid-template-columns: 1fr;
     gap: var(--espacamento-lg);
@@ -1140,10 +1283,12 @@ body {
     gap: var(--espacamento-lg);
   }
   
+  /* Ilustração da agricultura menor */
   .agricultura-visual {
     height: 250px;
   }
   
+  /* Contatos centralizados */
   .contato-details {
     gap: var(--espacamento-md);
   }
@@ -1155,8 +1300,9 @@ body {
   }
 }
 
-/* Mobile pequeno (até 480px) */
+/* MOBILE PEQUENO (até 480px) */
 @media (max-width: 480px) {
+  /* Header menor */
   .nav-container {
     height: 60px;
     padding: 0 var(--espacamento-sm);
@@ -1168,6 +1314,7 @@ body {
     padding: var(--espacamento-lg);
   }
   
+  /* Logo menor */
   .nav-logo h1 {
     font-size: 1.25rem;
   }
@@ -1176,6 +1323,7 @@ body {
     font-size: 0.625rem;
   }
   
+  /* Tipografia reduzida */
   .hero-title {
     font-size: 2rem;
     line-height: 1.2;
@@ -1198,6 +1346,7 @@ body {
     font-size: 1rem;
   }
   
+  /* Padding reduzido */
   .conexao-card,
   .sustentabilidade-card {
     padding: var(--espacamento-lg);
@@ -1207,6 +1356,7 @@ body {
     padding: var(--espacamento-lg);
   }
   
+  /* Footer centralizado */
   .footer-content {
     grid-template-columns: 1fr;
     gap: var(--espacamento-lg);
@@ -1214,12 +1364,13 @@ body {
   }
 }
 
-/* Ajustes para telas muito pequenas (até 320px) */
+/* TELAS MUITO PEQUENAS (até 320px) */
 @media (max-width: 320px) {
   .container {
     padding: 0 var(--espacamento-sm);
   }
   
+  /* Elementos ainda menores */
   .hero-visual {
     height: 150px;
   }
@@ -1239,7 +1390,12 @@ body {
   }
 }
 
-/* Melhorias de acessibilidade */
+/* ==========================================================================
+   13. MELHORIAS DE ACESSIBILIDADE
+   Configurações para usuários com necessidades especiais
+   ========================================================================== */
+
+/* Respeita preferência de movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -1255,11 +1411,12 @@ body {
     --cor-foreground: #f7fafc;
   }
   
-  /* Ajustes específicos para modo escuro podem ser adicionados aqui */
+  /* Aqui podem ser adicionados ajustes específicos para modo escuro */
 }
 
 /* Ajustes para impressão */
 @media print {
+  /* Remove elementos não necessários na impressão */
   .header,
   .nav-menu,
   .menu-icon,
@@ -1269,6 +1426,7 @@ body {
     display: none !important;
   }
   
+  /* Ajusta tipografia para impressão */
   body {
     font-size: 12pt;
     line-height: 1.4;
@@ -1279,6 +1437,7 @@ body {
     page-break-after: avoid;
   }
   
+  /* Remove sombras e adiciona bordas */
   .conexao-card,
   .sustentabilidade-card {
     page-break-inside: avoid;
@@ -1288,7 +1447,8 @@ body {
 }
 
 /* ==========================================================================
-   SELETORES CSS AVANÇADOS PARA COMPLEXIDADE TÉCNICA
+   14. SELETORES CSS AVANÇADOS
+   Técnicas avançadas para demonstrar complexidade técnica
    ========================================================================== */
 
 /* Seletor de atributo para links externos */
@@ -1298,7 +1458,7 @@ a[href^="http"]:not([href*="campocidade.com.br"])::after {
   opacity: 0.7;
 }
 
-/* Pseudo-classes estruturais */
+/* Pseudo-classes estruturais para animações escalonadas */
 .conexao-card:nth-child(odd) {
   animation-delay: 0.1s;
 }
@@ -1307,6 +1467,7 @@ a[href^="http"]:not([href*="campocidade.com.br"])::after {
   animation-delay: 0.2s;
 }
 
+/* Seletores nth-child complexos para cores alternadas */
 .sustentabilidade-card:nth-child(3n+1) {
   border-left: 4px solid var(--cor-campo);
 }
@@ -1319,7 +1480,7 @@ a[href^="http"]:not([href*="campocidade.com.br"])::after {
   border-left: 4px solid var(--cor-dourado);
 }
 
-/* Seletores de pseudo-elementos decorativos */
+/* Pseudo-elementos decorativos avançados */
 .section-header::before {
   content: '';
   position: absolute;
@@ -1336,6 +1497,7 @@ a[href^="http"]:not([href*="campocidade.com.br"])::after {
   margin-bottom: var(--espacamento-lg);
 }
 
+/* Estados de validação para formulários */
 .contato-form input:valid + label::after,
 .contato-form select:valid + label::after,
 .contato-form textarea:valid + label::after {
@@ -1343,13 +1505,13 @@ a[href^="http"]:not([href*="campocidade.com.br"])::after {
   color: var(--cor-campo);
 }
 
-/* Estados de foco melhorados */
+/* Estados de foco melhorados para acessibilidade */
 *:focus-visible {
   outline: 2px solid var(--cor-campo);
   outline-offset: 2px;
 }
 
-/* Hover states para melhor interatividade */
+/* Hover states aprimorados */
 .nav-link:hover {
   text-shadow: 0 0 8px rgba(45, 80, 22, 0.3);
 }
@@ -1360,28 +1522,42 @@ a[href^="http"]:not([href*="campocidade.com.br"])::after {
 }
 
 /* ==========================================================================
-   COMENTÁRIOS FINAIS
+   15. COMENTÁRIOS FINAIS
    
-   Este arquivo CSS implementa:
-   - Design responsivo completo (mobile-first)
+   Este arquivo CSS implementa um design system completo com:
+   
+   ARQUITETURA:
    - Variáveis CSS para consistência
-   - Animações e transições suaves
-   - Grid e Flexbox para layouts modernos
-   - Pseudo-elementos para detalhes visuais
-   - Seletores CSS avançados para complexidade técnica
-   - Acessibilidade e usabilidade
-   - Otimização para diferentes dispositivos e contextos
+   - Metodologia BEM implícita
+   - Mobile-first responsive design
+   - Componentes reutilizáveis
    
-   Técnicas CSS utilizadas:
-   - Custom Properties (CSS Variables)
-   - CSS Grid e Flexbox
-   - Pseudo-elementos (::before, ::after)
-   - Pseudo-classes (:hover, :focus, :nth-child)
-   - Keyframe animations
-   - Media queries responsivas
-   - Gradientes CSS
+   TÉCNICAS AVANÇADAS:
+   - Grid e Flexbox para layouts modernos
+   - Pseudo-elementos para decorações
+   - Animações CSS personalizadas
+   - Seletores avançados (nth-child, attribute, etc.)
+   - Gradientes complexos
    - Transformações e transições
-   - Seletores de atributo
-   - Combinadores CSS
+   
+   FUNCIONALIDADES:
+   - Menu hamburguer CSS-only
+   - Elementos visuais criados com CSS puro
+   - Formulário estilizado e responsivo
+   - Animações de scroll e hover
+   - Modo escuro e impressão
+   
+   ACESSIBILIDADE:
+   - Navegação por teclado
+   - Estados de foco visíveis
+   - Contraste adequado
+   - Preferências de movimento reduzido
+   - HTML semântico
+   
+   PERFORMANCE:
+   - CSS otimizado
+   - Fontes precarregadas
+   - Transições suaves
+   - Imagens substituídas por CSS
    
    ========================================================================== */

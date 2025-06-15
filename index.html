@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Meta tags essenciais para SEO e responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título e meta descrições para SEO -->
     <title>Festejando a Conexão Campo-Cidade | Agrinho 2025</title>
     <meta name="description" content="Explore a interdependência entre campo e cidade através de uma jornada visual que celebra nossa conexão com a natureza e o progresso urbano.">
     <meta name="keywords" content="campo, cidade, agricultura, sustentabilidade, conexão, interdependência">
+    
+    <!-- Preconnect para otimizar carregamento das fontes -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header com navegação -->
+    <!-- CABEÇALHO FIXO COM NAVEGAÇÃO RESPONSIVA -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
+                <!-- Logo principal com slogan -->
                 <div class="nav-logo">
                     <h1>Campo<span class="logo-separator">×</span>Cidade</h1>
                     <p class="nav-tagline">Onde a natureza encontra o progresso</p>
                 </div>
                 
-                <!-- Menu hamburguer (CSS-only) -->
+                <!-- Menu hamburguer para mobile (implementado apenas com CSS) -->
+                <!-- Input checkbox hidden que controla a abertura/fechamento do menu -->
                 <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <!-- Label que funciona como botão do menu hamburguer -->
                 <label for="menu-toggle" class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span> <!-- Linha superior do hamburguer -->
+                    <span></span> <!-- Linha do meio do hamburguer -->
+                    <span></span> <!-- Linha inferior do hamburguer -->
                 </label>
                 
+                <!-- Menu de navegação principal -->
                 <ul class="nav-menu">
                     <li><a href="#inicio" class="nav-link">Início</a></li>
                     <li><a href="#conexao" class="nav-link">Conexão</a></li>
@@ -40,46 +49,60 @@
         </nav>
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA -->
     <main class="main-content">
-        <!-- Seção Hero -->
+        
+        <!-- SEÇÃO HERO - Primeira impressão com chamada principal -->
         <section id="inicio" class="hero">
             <div class="hero-container">
+                <!-- Conteúdo textual da seção hero -->
                 <div class="hero-content">
                     <h2 class="hero-title">Festejando a Conexão<br><span class="hero-highlight">Campo-Cidade</span></h2>
                     <p class="hero-subtitle">Uma celebração da interdependência que alimenta nosso mundo e conecta tradição com inovação</p>
+                    <!-- Call-to-action principal -->
                     <button class="cta-button">Descubra Nossa História</button>
                 </div>
+                
+                <!-- Elementos visuais gráficos criados com CSS -->
                 <div class="hero-visual">
+                    <!-- Círculo representando o campo -->
                     <div class="hero-circle campo"></div>
+                    <!-- Círculo representando a cidade -->
                     <div class="hero-circle cidade"></div>
+                    <!-- Linha conectando campo e cidade -->
                     <div class="connection-line"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Conexão -->
+        <!-- SEÇÃO CONEXÃO - Explica a relação simbiótica -->
         <section id="conexao" class="conexao">
             <div class="container">
+                <!-- Cabeçalho da seção com título e subtítulo -->
                 <div class="section-header">
                     <h2 class="section-title">A Dança entre Campo e Cidade</h2>
                     <p class="section-subtitle">Uma relação simbiótica que sustenta nossa sociedade</p>
                 </div>
                 
+                <!-- Grid responsivo com cards explicativos -->
                 <div class="conexao-grid">
+                    <!-- Card 1: Fluxo de alimentos -->
                     <div class="conexao-card">
-                        <div class="card-icon campo-icon"></div>
+                        <div class="card-icon campo-icon"></div> <!-- Ícone com emoji de campo -->
                         <h3>Do Campo para a Mesa</h3>
                         <p>Alimentos frescos e nutritivos chegam diariamente às nossas cidades, conectando produtores rurais aos consumidores urbanos através de uma rede de distribuição que une distâncias e culturas.</p>
                     </div>
                     
+                    <!-- Card 2: Tecnologia e inovação -->
                     <div class="conexao-card">
-                        <div class="card-icon cidade-icon"></div>
+                        <div class="card-icon cidade-icon"></div> <!-- Ícone com emoji de cidade -->
                         <h3>Inovação que Volta ao Campo</h3>
                         <p>Tecnologias desenvolvidas nas cidades retornam ao campo, modernizando práticas agrícolas e criando soluções sustentáveis para desafios rurais contemporâneos.</p>
                     </div>
                     
+                    <!-- Card 3: Intercâmbio cultural -->
                     <div class="conexao-card">
-                        <div class="card-icon cultura-icon"></div>
+                        <div class="card-icon cultura-icon"></div> <!-- Ícone representando cultura -->
                         <h3>Intercâmbio Cultural</h3>
                         <p>Tradições rurais enriquecem a vida urbana, enquanto a diversidade das cidades inspira novas perspectivas no campo, criando uma rica tapeçaria cultural.</p>
                     </div>
@@ -87,14 +110,16 @@
             </div>
         </section>
 
-        <!-- Seção Agricultura -->
+        <!-- SEÇÃO AGRICULTURA - Destaca a importância da agricultura -->
         <section id="agricultura" class="agricultura">
             <div class="container">
                 <div class="agricultura-content">
+                    <!-- Conteúdo textual com estatísticas -->
                     <div class="agricultura-text">
                         <h2 class="section-title">Agricultura: O Coração da Conexão</h2>
                         <p>A agricultura é muito mais que produção de alimentos - é a base fundamental que sustenta nossa civilização. Através de técnicas tradicionais e inovações modernas, nossos agricultores alimentam milhões de pessoas nas cidades.</p>
                         
+                        <!-- Grid de estatísticas importantes -->
                         <div class="stats-grid">
                             <div class="stat-item">
                                 <div class="stat-number">70%</div>
@@ -111,12 +136,15 @@
                         </div>
                     </div>
                     
+                    <!-- Ilustração animada da agricultura criada com CSS -->
                     <div class="agricultura-visual">
                         <div class="agricultura-illustration">
+                            <!-- Fileiras de plantação animadas -->
                             <div class="field-row"></div>
                             <div class="field-row"></div>
                             <div class="field-row"></div>
                             <div class="field-row"></div>
+                            <!-- Trator animado que se move pela tela -->
                             <div class="tractor"></div>
                         </div>
                     </div>
@@ -124,7 +152,7 @@
             </div>
         </section>
 
-        <!-- Seção Sustentabilidade -->
+        <!-- SEÇÃO SUSTENTABILIDADE - Soluções práticas -->
         <section id="sustentabilidade" class="sustentabilidade">
             <div class="container">
                 <div class="section-header">
@@ -132,8 +160,11 @@
                     <p class="section-subtitle">Iniciativas que fortalecem a conexão campo-cidade</p>
                 </div>
                 
+                <!-- Grid de cards com soluções sustentáveis -->
                 <div class="sustentabilidade-grid">
+                    <!-- Card 1: Feiras orgânicas -->
                     <article class="sustentabilidade-card">
+                        <!-- Imagem de fundo criada com CSS e emojis -->
                         <div class="card-image feira-organica"></div>
                         <div class="card-content">
                             <h3>Feiras Orgânicas</h3>
@@ -142,6 +173,7 @@
                         </div>
                     </article>
                     
+                    <!-- Card 2: Turismo rural -->
                     <article class="sustentabilidade-card">
                         <div class="card-image turismo-rural"></div>
                         <div class="card-content">
@@ -151,6 +183,7 @@
                         </div>
                     </article>
                     
+                    <!-- Card 3: Hortas urbanas -->
                     <article class="sustentabilidade-card">
                         <div class="card-image hortas-urbanas"></div>
                         <div class="card-content">
@@ -163,14 +196,16 @@
             </div>
         </section>
 
-        <!-- Seção Contato -->
+        <!-- SEÇÃO CONTATO - Formulário funcional -->
         <section id="contato" class="contato">
             <div class="container">
                 <div class="contato-content">
+                    <!-- Informações de contato -->
                     <div class="contato-info">
                         <h2 class="section-title">Vamos Conectar!</h2>
                         <p>Quer fazer parte desta celebração da conexão campo-cidade? Entre em contato conosco e descubra como você pode contribuir para fortalecer essa importante relação.</p>
                         
+                        <!-- Lista de contatos com ícones -->
                         <div class="contato-details">
                             <div class="detail-item">
                                 <div class="detail-icon email-icon"></div>
@@ -187,17 +222,21 @@
                         </div>
                     </div>
                     
+                    <!-- Formulário de contato simulado -->
                     <form class="contato-form">
+                        <!-- Campo nome -->
                         <div class="form-group">
                             <label for="nome">Nome completo</label>
                             <input type="text" id="nome" name="nome" required>
                         </div>
                         
+                        <!-- Campo email -->
                         <div class="form-group">
                             <label for="email">E-mail</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
+                        <!-- Campo seleção de interesse -->
                         <div class="form-group">
                             <label for="interesse">Área de interesse</label>
                             <select id="interesse" name="interesse" required>
@@ -210,11 +249,13 @@
                             </select>
                         </div>
                         
+                        <!-- Campo mensagem -->
                         <div class="form-group">
                             <label for="mensagem">Sua mensagem</label>
                             <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
                         </div>
                         
+                        <!-- Botão de envio -->
                         <button type="submit" class="form-button">Enviar Mensagem</button>
                     </form>
                 </div>
@@ -222,15 +263,17 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- RODAPÉ COM INFORMAÇÕES ADICIONAIS -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Seção sobre o projeto -->
                 <div class="footer-section">
                     <h3>Campo×Cidade</h3>
                     <p>Celebrando a conexão que alimenta nosso mundo e conecta tradição com inovação.</p>
                 </div>
                 
+                <!-- Links de navegação -->
                 <div class="footer-section">
                     <h4>Navegação</h4>
                     <ul>
@@ -241,6 +284,7 @@
                     </ul>
                 </div>
                 
+                <!-- Créditos do projeto -->
                 <div class="footer-section">
                     <h4>Créditos</h4>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2025</p>
@@ -248,8 +292,9 @@
                 </div>
             </div>
             
+            <!-- Linha final com copyright -->
             <div class="footer-bottom">
-                <p>&copy; Desenvolvido por Hyago Jose Maria para o Projeto Agrinho 2025</p>
+                <p>&copy; Desenvolvido por Hyago José Maria para o concurso Agrinho 2025</p>
                 <p class="footer-tag">#agrinho #campocidade #sustentabilidade</p>
             </div>
         </div>
